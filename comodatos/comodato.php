@@ -53,7 +53,7 @@ include('concomodato.php');
                                     <td>$fetch[3]</td>
                                     <td>$fetch[4]</td>
                                     <td>$fetch[5]</td>
-                                    <td><a href='edit_comodato.php?id=$fetch[6]'><button>EDITAR</button></a></td>
+                                    <td><a href='form_editar.php?id=$fetch[6]'><button>EDITAR</button></a></td>
                                     <td><button onclick='confirmacaoExclusao($fetch[6])'>EXCLUIR</button></td>";
                             echo "</tr>";
                         }
@@ -63,7 +63,7 @@ include('concomodato.php');
         </div>
     </section>
     <script>
-        // Realiza um redirecionamento da página, dependendo da opção escolhida
+        // Realiza um redirecionamento da página, dependendo da opção escolhida no pop-up
         function confirmacaoExclusao(id)
         {
             if (confirm("Você realmente deseja excluir?"))
