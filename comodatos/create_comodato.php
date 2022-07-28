@@ -1,7 +1,8 @@
 <?php
-include('concomodato.php');
+include('concomodato.php'); // Arquivo contendo a variável com os dados da conexão ao banco de dados
 if(isset($_POST['submit']))
 {
+    // Armazenando os dados recebidos do formulário através do método POST
     $nome = $_POST["nome"];
     $cpf = $_POST["cpf"];
     $setor = $_POST["setor"];
@@ -19,6 +20,6 @@ if(isset($_POST['submit']))
         echo "Error: " . $query . ":-" . mysqli_error($concomodato);
     }
 
-    mysqli_close($concomodato);
+    mysqli_close($concomodato); // Encerrando a conexão com o banco de dados
 }
 ?>

@@ -42,20 +42,39 @@ include('concomodato.php');
                         <th class = 'pat'>Pat</th>
                     </tr>
                     <?php
-                    
-                        $query = "SELECT nome, cpf, data, carteira, equipamento, pat from comodatos";
+
+                        $query = "SELECT nome, cpf, data, carteira, equipamento, pat, id FROM comodatos";
                         $result = mysqli_query($concomodato, $query);
                         while($fetch = mysqli_fetch_row($result)){
                             echo "<tr>";
-                            echo "<td>$fetch[0]</td>" . "<td>$fetch[1]</td>" . "<td>$fetch[2]</td>" ."<td>$fetch[3]</td>" . "<td>$fetch[4]</td>" . "<td>$fetch[5]</td>";
-                            echo "</tr>";                            
+                            echo "  <td>$fetch[0]</td>
+                                    <td>$fetch[1]</td>
+                                    <td>$fetch[2]</td>
+                                    <td>$fetch[3]</td>
+                                    <td>$fetch[4]</td>
+                                    <td>$fetch[5]</td>
+                                    <td><a href='edit_comodato.php?id=$fetch[6]'><button>EDITAR</button></a></td>
+                                    <td><button onclick='confirmacaoExclusao($fetch[6])'>EXCLUIR</button></td>";
+                            echo "</tr>";
                         }
-                    
                     ?>
                 </table>
-            </div>  
+            </div>
         </div>
     </section>
-    
+    <script>
+        // Realiza um redirecionamento da página, dependendo da opção escolhida
+        function confirmacaoExclusao(id)
+        {
+            if (confirm("Você realmente deseja excluir?"))
+            {
+                window.location.href=`exclui_comodato?id=${id}.php`;
+            }
+            else
+            {
+                window.location.href='comodato.php';
+            }
+        }
+    </script>
 </body>
 </html>

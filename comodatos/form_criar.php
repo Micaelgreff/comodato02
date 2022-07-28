@@ -1,3 +1,4 @@
+<!-- FORMULÁRIO TEMPORÁRIO PARA TESTAR AS FUNCIONALIDADES DO CRUD -->
 <?php
 session_start();
 include('verificalogin.php');
