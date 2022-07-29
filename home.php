@@ -28,12 +28,12 @@ include('dadoslogin.php');
         <section class = "boards">
             <div class = "board">
                 <div class = "card">
-                    <a href="comodatos\comodato.php" id = "comodato"><img alt="comodato" src = "imagens\comodato.png">COMODATOS</a>
+                    <a href="comodatos\comodato.php" id = "comodato"><img alt="comodato" src = "imagens\consulta_comodato.png">Consultar Comodatos</a>
                 </div>
             </div>
             <div class = "board">
                 <div class = "card" id = "info">
-                    <a href = "/">INFORMAÇÕES</a>
+                    <a href = "comodatos\form_criar.php" id = "bcriacomodato"><img alt="comodato" src = "imagens\comodato.png">Criar Comodato</a>
                 </div>
             </div>
         </section>
