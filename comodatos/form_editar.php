@@ -19,7 +19,6 @@ include('concomodato.php');
     $idComodato = $_GET['id'];
     $query = "SELECT nome, cpf, data, carteira, equipamento, pat, id FROM comodatos WHERE id = '$idComodato'";
     $result = mysqli_fetch_array(mysqli_query($concomodato, $query), MYSQLI_NUM); // Faz a query no MySQL e retorna os dados em formato de Array com índice numérico
-    $result[2] = str_replace('/','-', $result[2]) //Converte a formatação de Data para YYYY-MM-DD
     ?>
     <form action="edit_comodato.php" method="post">
         <!-- O resultado da query é salvo como valor predefinido nos inputs -->
@@ -34,14 +33,12 @@ include('concomodato.php');
         <hr>
         <h3>DADOS COMODATO:</h3>
         <label>DATA:</label><br>
-        <input type="date" name="data" value="<?php echo date("Y-m-d", strtotime($result[2])) ?>"><br>
+        <input type="date" name="data" value="<?php echo $result[2] ?>"><br>
         <label>EQUIPAMENTO:</label><br>
         <input type="text" name="equipamento" value="<?php echo $result[4] ?>"><br>
         <label>PATRIMONIO:</label><br>
         <input type="text" name="patrimonio" value="<?php echo $result[5] ?>"><br><br>
         <input type="submit" name="submit" value="Atualizar">
     </form>
-    <br>
-    <a href = 'comodato.php'>cancelar</a>
 </body>
 </html>

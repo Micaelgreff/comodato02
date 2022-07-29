@@ -3,7 +3,6 @@
 session_start();
 include('verificalogin.php');
 include('..\dadoslogin.php');
-include('concomodato.php'); // Arquivo contendo a variável com os dados da conexão ao banco de dados
 ?>
 <!DOCTYPE html>
 <html lang="en">
