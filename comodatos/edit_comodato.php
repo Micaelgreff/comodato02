@@ -9,12 +9,13 @@ if(isset($_POST['submit']))
     $data = $_POST["data"];
     $equipamento = $_POST["equipamento"];
     $patrimonio = $_POST["patrimonio"];
+    $id = $_POST["id"];
 
-    $query = "INSERT INTO comodatos (nome, cpf, data, carteira, equipamento, pat) VALUES ('$nome', '$cpf', '$data', '$setor', '$equipamento', '$patrimonio')";
+    $query = "UPDATE comodatos SET nome = '$nome', cpf = '$cpf', data = '$data', carteira = '$setor', equipamento = '$equipamento', pat = '$patrimonio' WHERE id = '$id'";
 
     if(mysqli_query($concomodato, $query))
     {
-        echo "DADOS ENVIADOS!";
+        echo "DADOS ATUALIZADOS!";
     }
     else{
         echo "Error: " . $query . ":-" . mysqli_error($concomodato);
