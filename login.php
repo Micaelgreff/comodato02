@@ -20,7 +20,7 @@ $row = mysqli_num_rows($result);   //verificar o número de linhas da query exec
 if($row == 1){          //se o numeros de linhas for 1 o login está correto e o usuário pode acessar o home.php
     $_SESSION['usuario'] = $usuario;
     $_SESSION['senha'] = $senha;
-    header('Location: home.php');
+    header('Location: menu.php');
     exit();
 }else {
     $_SESSION["naoautentic"] = true;      //volta pra página inicial com 'login e senha invalidso'

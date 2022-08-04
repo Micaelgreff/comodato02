@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
     }
     else{
         echo "Error: " . $query . ":-" . mysqli_error($concomodato);
-        echo <br>
+        echo "<br>";
         echo "Favor contatar o administrador!";
         header('refresh:5; url=comodato.php');
     }
